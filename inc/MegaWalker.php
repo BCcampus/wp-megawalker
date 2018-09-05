@@ -106,7 +106,7 @@ class MegaWalker extends \Walker_Nav_Menu
 		$attributes .= ($args->has_children) ? ' class="dropdown-toggle parent" data-toggle="dropdown"' : '';
 
 		$item_output = $args->before;
-		$item_output .= '<a'.$attributes.'>';
+		$item_output .= '<a class="nav-link"'.$attributes.'>';
 
 		// Check if item has featured image
 		// $has_featured_image = array_search('featured-image', $classes);
