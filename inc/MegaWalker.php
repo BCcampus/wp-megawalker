@@ -125,7 +125,7 @@ class MegaWalker extends \Walker_Nav_Menu
 		if (strlen($item->description) > 2) {
 			$item_output .= '</a> <span class="sub">'.$item->description.'</span>';
 		}
-		$item_output .= (($depth == 0 || 1) && $args->has_children) ? ' <b class="caret"></b></a>' : '</a>';
+		$item_output .= (($depth == 0 || 1) && $args->has_children) ? ' </a>' : '</a>';
 		$item_output .= $args->after;
 
 		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
