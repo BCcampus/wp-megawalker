@@ -103,10 +103,10 @@ class MegaWalker extends \Walker_Nav_Menu
 		$attributes .= !empty($item->target) ? ' target="'.esc_attr($item->target).'"' : '';
 		$attributes .= !empty($item->xfn) ? ' rel="'.esc_attr($item->xfn).'"' : '';
 		$attributes .= !empty($item->url) ? ' href="'.esc_attr($item->url).'"' : '';
-		$attributes .= ($args->has_children) ? ' class="dropdown-toggle parent" data-toggle="dropdown"' : '';
+		$attributes .= ($args->has_children) ? ' class="dropdown-toggle parent nav-link" data-toggle="dropdown"' : 'class="nav-link"';
 
 		$item_output = $args->before;
-		$item_output .= '<a class="nav-link"'.$attributes.'>';
+		$item_output .= '<a'.$attributes.'>';
 
 		// Check if item has featured image
 		// $has_featured_image = array_search('featured-image', $classes);
