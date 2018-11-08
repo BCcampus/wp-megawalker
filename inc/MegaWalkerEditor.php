@@ -30,7 +30,7 @@ class MegaWalkerEditor extends \Walker_Nav_Menu_Edit {
 		parent::start_el( $item_output, $item, $depth, $args, $id );
 
 		$output .= preg_replace(
-		// NOTE: Check this regex from time to time!
+			// NOTE: Check this regex from time to time!
 			'/(?=<(fieldset|p)[^>]+class="[^"]*field-move)/',
 			$this->get_fields( $item, $depth, $args ),
 			$item_output
