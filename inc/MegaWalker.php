@@ -92,7 +92,7 @@ class MegaWalker extends \Walker_Nav_Menu {
 
 		$output .= $indent . '<li' . $id . $value . $class_names . $li_attributes . '>';
 
-		$attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
+		$attributes = ! empty( $item->title ) ? ' title="' . esc_attr( $item->title ) . '"' : '';
 		$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) . '"' : '';
 		$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) . '"' : '';
 		$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) . '"' : '';
@@ -104,15 +104,11 @@ class MegaWalker extends \Walker_Nav_Menu {
 		// Check if item has featured image
 		if ( $has_feature_image && $this->mege_menu_id !== 0 ) {
 			$post_id     = url_to_postid( $item->url );
-			$item_output .= '<img alt="' . esc_attr( $item->attr_title ) . '" src="' . get_the_post_thumbnail_url( $post_id ) . '"/>';
+			$item_output .= '<img alt="' . esc_attr( $item->title ) . '" src="' . get_the_post_thumbnail_url( $post_id ) . '"/>';
 		}
 
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 
-		// add support for menu item title
-		if ( strlen( $item->attr_title ) > 2 ) {
-			$item_output .= '<h3 class="tit">' . $item->attr_title . '</h3>';
-		}
 		// add support for menu item descriptions
 		if ( strlen( $item->description ) > 2 ) {
 			$item_output .= '</a> <span class="sub">' . $item->description . '</span>';
